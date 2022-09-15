@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/item_back"
+        layout="@layout/item_back"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/list_item_frount"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#C7CECD">
+
+            <ImageView
+                android:id="@+id/imageView_item_isSecret"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/baseline_lock_open_24" />
+
+            <TextView
+                android:id="@+id/textView_item_writeTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:text="@string/txt_weather_format_time"
+                app:layout_constraintStart_toEndOf="@id/imageView_item_isSecret"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_item_attachCnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:text="@string/txt_item_format_attacthment"
+                app:layout_constraintBottom_toTopOf="@id/textView_item_tag"
+                app:layout_constraintStart_toEndOf="@id/imageView_item_isSecret"
+                app:layout_constraintTop_toBottomOf="@id/textView_item_writeTime" />
+
+            <TextView
+                android:id="@+id/textView_item_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:text="@string/txt_item_format_tags"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageView_item_isSecret" />
+
+
+            <ImageView
+                android:id="@+id/imageView_item_pinDrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/baseline_pin_drop_24" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/imageView_item_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:srcCompat="@drawable/sample_map" />
+
+    </LinearLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>

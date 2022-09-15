@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="6dp"
+        android:orientation="vertical">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/detailFragment_weather_fragmentContainer"
+            android:name="com.example.unchilnote.weather.WeatherFragment"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="6dp"
+            android:background="#BABFDA"
+            android:tag="weatherFragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/frame_detail_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="#BABFDA"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detailFragment_weather_fragmentContainer">
+
+            <TextView
+                android:id="@+id/textView_detail_attachCnt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:text="@string/txt_item_format_attacthment"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView_detail_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="@string/txt_item_format_tags"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="60dp"
+            android:fillViewport="false"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frame_detail_desc">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/detailFragment_snapshot_fragmentContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="288dp"
+                    android:layout_marginBottom="6dp"
+                    android:tag="galleryFragment" />
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/detailFragment_record_fragmentContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="288dp"
+                    android:layout_marginBottom="6dp"
+                    android:tag="recordFragment" />
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/detailFragment_photo_fragmentContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="288dp"
+                    android:layout_marginBottom="6dp"
+                    android:tag="galleryFragment" />
+
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/detailFragment_bottomSheet_Chip"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:keepScreenOn="false"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <include
+            android:id="@+id/chip_detailFragment"
+            layout="@layout/tag_chips" />
+
+    </LinearLayout>
+
+
+
+    <include
+        android:id="@+id/bottom_detail"
+        layout="@layout/bottom" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

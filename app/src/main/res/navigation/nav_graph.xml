@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.unchilnote.list.ListFragment"
+        android:label="list_fragment"
+        tools:layout="@layout/list_fragment" >
+
+        <action
+            android:id="@+id/action_listFragment_to_writeFragment"
+            app:destination="@id/writeFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.example.unchilnote.weather.WeatherFragment"
+        android:label="Weather_fragment"
+        tools:layout="@layout/weather_fragment" />
+
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.example.unchilnote.camera.CameraFragment"
+        android:label="camera_fragment"
+        tools:layout="@layout/camera_fragment" >
+
+
+        <action
+            android:id="@+id/action_cameraFragment_to_galleryFragment"
+            app:destination="@id/galleryFragment" />
+        <action
+            android:id="@+id/action_cameraFragment_to_writeFragment"
+            app:destination="@id/writeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.example.unchilnote.gallery.GalleryFragment"
+        android:label="gallery_fragment"
+        tools:layout="@layout/gallery_fragment" >
+
+        <argument
+            android:name="root_dir"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_galleryFragment_self"
+            app:destination="@id/galleryFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/imageViewer"
+        android:name="com.example.unchilnote.gallery.ImageViewer"
+        android:label="ImageViewer" >
+        <argument
+            android:name="file_name"
+            app:argType="string" />
+        <argument
+            android:name="logTag"
+            app:argType="string" />
+        <argument
+            android:name="parentfragment"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/recordFragment"
+        android:name="com.example.unchilnote.record.RecordFragment"
+        android:label="RecordFragment" />
+    <fragment
+        android:id="@+id/writeFragment"
+        android:name="com.example.unchilnote.write.WriteFragment"
+        android:label="WriteFragment" >
+        <action
+            android:id="@+id/action_writeFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_writeFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.unchilnote.googlemap.MapsFragment"
+        android:label="maps_fragment"
+        tools:layout="@layout/maps_fragment" >
+        <action
+            android:id="@+id/action_mapsFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.unchilnote.detail.DetailFragment"
+        android:label="DetailFragment" >
+        <action
+            android:id="@+id/action_detailFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+
+</navigation>

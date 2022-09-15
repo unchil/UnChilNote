@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/imgBtn_flash"
+        android:layout_width="@dimen/button_24"
+        android:layout_height="@dimen/button_24"
+        android:layout_marginTop="@dimen/margin_16"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/imgBtn_flash_alt"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_flash_off_24" />
+
+
+    <FrameLayout
+        android:layout_width="180dp"
+        android:layout_height="match_parent"
+        android:background="@android:drawable/screen_background_light_transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+
+    <ImageButton
+        android:id="@+id/imgBtn_shutter"
+        android:layout_width="@dimen/button_72"
+        android:layout_height="@dimen/button_72"
+        android:layout_marginRight="72dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/imgBtn_shutter_alt"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_camera_black_48" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_lens_switch"
+        android:layout_width="@dimen/button_48"
+        android:layout_height="@dimen/button_48"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/imgBtn_lens_switch_alt"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_flip_camera_android_20" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_gallery"
+        android:layout_width="@dimen/button_132"
+        android:layout_height="@dimen/button_132"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:background="@android:drawable/gallery_thumb"
+        android:contentDescription="@string/imgBtn_gallery_alt"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/baseline_photo_library_24" />
+
+
+    <RadioGroup
+        android:id="@+id/radioGrp_metering"
+        android:orientation="horizontal"
+        android:checkedButton="@id/radioBtn_af"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+        <RadioButton
+            android:id="@+id/radioBtn_af"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radioBtn_af_txt" />
+
+        <RadioButton
+            android:id="@+id/radioBtn_ae"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radioBtn_ae_txt" />
+
+        <RadioButton
+            android:id="@+id/radioBtn_awe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radioBtn_awe_txt" />
+
+    </RadioGroup>
+
+    <!--
+    <ImageView
+        android:id="@+id/imgBtn_replyAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/imgBtn_replyAll_alt"
+        android:layout_marginBottom="@dimen/margin_16"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_gallery"
+        app:layout_constraintEnd_toEndOf="@+id/imgBtn_gallery"
+        app:layout_constraintStart_toStartOf="@+id/imgBtn_gallery"
+        app:srcCompat="@drawable/baseline_reply_all_black_48" />
+-->
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root-path name="files" path=".">
+
+    <files-path name="Screenshots" path="file:///storage/emulated/0/Android/data/com.example.unchilnote/files/Screenshots/" />
+    <files-path name="Documents" path="file:///storage/emulated/0/Android/data/com.example.unchilnote/files/Documents/" />
+    <files-path name="Pictures" path="file:///storage/emulated/0/Android/data/com.example.unchilnote/files/Pictures/" />
+
+</root-path>
