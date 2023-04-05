@@ -13,11 +13,11 @@ import androidx.core.app.ActivityCompat.startActivityForResult
 import com.example.unchilnote.utils.MessageUtils
 import com.google.android.material.snackbar.Snackbar
 
-class PermissionManager() {
+class PermissionManager(var activity: AppCompatActivity) {
     private val logTag = PermissionManager::class.java.name
     var reqPermissionResultCode:Int = -1
     lateinit var permissionArray: Array<String>
-    lateinit var activity: AppCompatActivity
+  
 
     private fun approvedPermissions(context: Context): Boolean {
         permissionArray.forEach {
@@ -27,14 +27,13 @@ class PermissionManager() {
         return true
     }
 
-    private fun requestPermissions(activity: AppCompatActivity) {
-        this.activity = activity
+    private fun requestPermissions() {
         ActivityCompat.requestPermissions (activity, permissionArray, reqPermissionResultCode)
     }
 
-    fun checkPermissions(activity: AppCompatActivity) : Boolean {
+    fun checkPermissions() : Boolean {
        return  if(!approvedPermissions(activity.applicationContext)) {
-            requestPermissions(activity)
+            requestPermissions()
             false
         }else {
             true
