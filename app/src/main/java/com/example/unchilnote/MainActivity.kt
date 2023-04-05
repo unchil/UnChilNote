@@ -16,13 +16,13 @@ class MainActivity : AppCompatActivity() {
 
         Log.d(logTag, "MainActivity onCreate.....")
 
-        permissionManager = PermissionManager().apply {
+        permissionManager = PermissionManager(this@MainActivity).apply {
             reqPermissionResultCode = Thread.currentThread().hashCode()
             permissionArray = resources.getStringArray(R.array.Req_Permission_Array)
             this@MainActivity.isReqPermissionCheck = permissionArray.isNotEmpty()
         }.also {
             if (isReqPermissionCheck) {
-                if(it.checkPermissions(this@MainActivity)){
+                if(it.checkPermissions()){
                     setContentView(R.layout.activity_main)
                 }
             }
